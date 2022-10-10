@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("./vivid-blurred-colorful-wallpaper-background.jpg");
+}
+input[type=text], input[type=password] {
+    display: inline-block;
+    width: 100%;
+    border: 0ch;
+    background-color: antiquewhite;
+}
+
+label {
+    font-size: large;
+    padding-bottom: 2em;
+}
+form {
+    padding-top: 15em;
+    padding-left: 35em;
+}
+.register-form {
+    border: 2px solid blueviolet ;
+    width: 30em;
+    height: auto;
+    padding: 20px 20px 20px 20px;
+    background-color: aliceblue;
+}
+label {
+    padding-top: 1%;
+}
+Button {
+    border: solid;
+    height: 30px;
+    width: 100px;
+    background-color: aquamarine;
+}
+
+.submit {
+    padding-left: 12em;
+}
+
+#info {
+    padding-top: 6em;
+}
+.error{
+    color: red;
+}
+.accepted {
+    border-color: chartreuse;
+}
