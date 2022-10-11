@@ -1,78 +1,65 @@
-var usernameNode = document.getElementById("username");
-usernameNode.addEventListener('blur', usernameValidation);
-usernameNode.addEventListener('click', onTyping);
-var emailNode = document.getElementById("email")
-emailNode.addEventListener('blur', emailValidation);
-emailNode.addEventListener('click', onTyping)
-var passwordNode = document.getElementById("password");
+var inputNode = Array.from(document.querySelectorAll("input"));
+var [usernameNode, emailNode, passwordNode, rePasswordNode] = inputNode;
+var messageNode = Array.from(document.querySelectorAll("a"));
+var [usernameState, emailState, passwordState, rePasswordState] = messageNode;
+
+const [emailRex, upperRex, numberRex, spaceRex] = [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, /[A-Z]/, /[0-9]/, /^\s+$/]
+const USERNAME_LENGTH = 5;
+const PASSWORD_LENGTH = 6;
+
+usernameNode.addEventListener("blur", usernameValidation);
+emailNode.addEventListener("blur", emailValidation);
 passwordNode.addEventListener("blur", passwordValidation);
-passwordNode.addEventListener('click', onTyping);
-var rePasswordNode = document.getElementById("rePassword");
 rePasswordNode.addEventListener("blur", rePasswordValidate);
-rePasswordNode.addEventListener("click", onTyping);
 
+inputNode.forEach(element => {
+    element.addEventListener('click', typing);
+})
 
-document.getElementsByTagName("form")[0].onsubmit =  function(e) {
+document.querySelector("form").addEventListener("submit",  function(e) {
     e.preventDefault();
-}
+})
 
-document.getElementsByTagName("Button")[0].addEventListener('click', sendRequest);
-function sendRequest(e) {
-    if(usernameNode.value == "" ||
-        emailNode.value == ""||
-        passwordNode.value == ""||
-        rePasswordNode.value != passwordNode.value ||
-        document.getElementsByClassName("username-state")[0].textContent != "" ||
-        document.getElementsByClassName("email-state")[0].textContent != "" ||
-        document.getElementsByClassName("password-state")[0].textContent != "" ||
-        document.getElementsByClassName("rePassword-state")[0].textContent != "" ) {
+document.querySelector("Button").addEventListener("click", function (e) {
+    if(messageNode.some(element => {
+        return element.textContent != "";
+    }) ) {
             console.log("cannot send request")
     } else {
         console.log({username: usernameNode.value,
         email: emailNode.value,
         password: passwordNode.value,
         rePassword: rePasswordNode.value});
- //       document.getElementsByTagName("form")[0].submit();
     }
-}
-
+})
 
 function usernameValidation(e) {
     var username = e.target.value;
-    var usernameState = document.getElementsByClassName("username-state")[0];
-    if(username.length < 5) showError(usernameState, "username") 
+    if(username.length < USERNAME_LENGTH) showError(usernameState, "username") 
     else showAccepted(usernameState);
 }
 
 function emailValidation(e) {
     var email = e.target.value;
-    var emailState = document.getElementsByClassName("email-state")[0];
-    if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) showError(emailState, "email") ;
+    if(!(emailRex.test(email))) showError(emailState, "email") ;
     else showAccepted(emailState);
 }
 
 function passwordValidation(e) {
     var password = e.target.value;
-    var passwordState = document.getElementsByClassName("password-state")[0];
-    if(password.length < 6 ||
-        !(/[A-Z]/.test(password))|| // password contain upper character
-        !(/[0-9]/.test(password))|| // password contain number
-        (/^\s+$/.test(password))//password contain white space
+    if(password.length < PASSWORD_LENGTH ||
+        !(upperRex.test(password))|| // password contain upper character
+        !(numberRex.test(password))|| // password contain number
+        (spaceRex.test(password))//password contain white space
         ) showError(passwordState, "password");
     else showAccepted(passwordState);
 }
 
 function rePasswordValidate(e) {
     var password = document.getElementById("password").value;
-    if(!password) return false;
-    else {
-        var rePassword = e.target.value;
-        console.log(rePassword)
-        var rePasswordState = document.getElementsByClassName("rePassword-state")[0];
-        if(rePassword !== password) showError(rePasswordState, "rePassword");
-        else showAccepted(rePasswordState);
-    }
-
+    var rePassword = e.target.value;
+    if(rePassword !== password) showError(rePasswordState, "rePassword");
+    else showAccepted(rePasswordState);
 }
 
 function printError(fieldName) {
@@ -97,10 +84,9 @@ function showError(element, name) {
 
 function showAccepted(element) {
     element.classList.remove("error");
-    element.classList.add("accepted");
     element.textContent = "";
 }
 
-function onTyping(e) {
+function typing(e) {
     e.target.parentElement.querySelector("a").textContent = "";
 }
