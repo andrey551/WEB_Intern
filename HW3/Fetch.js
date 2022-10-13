@@ -38,7 +38,10 @@ actionTodo(methodList.get)
         return result.json()
     })
     .then(json => {
-        console.log(json)
+        var arr = json.filter(function(element) {
+            return element.id > 50
+        })
+        console.log(arr)
     })
     .catch(error => {
         console.error(error);
