@@ -111,13 +111,9 @@
   .show {display:block;}
 
   .parallax-1 {
-    /* The image used */
-    background-image: url("../img/diagoona-bg-1.jpg");
-  
-    /* Set a specific height */
+
     min-height: 1000px;
   
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -125,13 +121,10 @@
   }
 
   .parallax-2 {
-    /* The image used */
     background-image: url("../img/diagoona-bg-2.jpg");
   
-    /* Set a specific height */
     min-height: 1000px;
   
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
