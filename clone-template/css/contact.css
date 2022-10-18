@@ -1,0 +1,61 @@
+input{
+    background-color:transparent;
+    box-shadow: none;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-top: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    border-color: aliceblue;
+    width: 100%;
+}
+
+textarea {
+    background-color:transparent;
+    box-shadow: none;
+    border-top: 2px;
+    border-left: 2px;
+    border-right: 2px;
+    border-color: aliceblue;
+    width: 100%;
+}
+
+input[type=text]:focus{
+    outline: none;
+}
+
+textarea:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 #719ECE;
+}
+input::placeholder{
+    color: aliceblue;
+}
+textarea::placeholder {
+    color: aliceblue;
+}
+
+textarea {
+    height: 150px;
+    overflow: hidden;
+}
+
+.contact .title h2 {
+    padding-top: 20px;
+    padding-bottom: 24px;
+}
+.contact .content {
+    padding-bottom: 85px;
+}
+
+.send button {
+    float: right;
+    font-size: 20px;
+    padding: 10px 10px 10px 10px;
+    color: black;
+} 
+.contact {
+    width: fit-content;
+    padding-right: 50px;
+}
+

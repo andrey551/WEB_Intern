@@ -1,0 +1,20 @@
+.card {
+    padding-top:50px;
+    display: flex;
+    max-width: 50em;
+}
+.card .text .content{
+    padding-bottom: 20px;
+}
+
+.card .text .title{
+    padding-bottom: 20px;
+}
+
+.card .text {
+    padding: 0px 20px 20px 30px;
+}
+
+.services {
+    padding-right: 50px;
+}
