@@ -1,0 +1,11 @@
+{
+    "card":[{
+        "icon":"fa-solid fa-shapes fa-2x",
+        "text": ["Cras quam urna, interdum at posuere ac, tincidunt ut ipsum. Nam condimentum placerat enim. Nullam euismod sapien."]},
+        {"icon":"fa-solid fa-draw-polygon fa-2x",
+        "text":["Nunc id hendrerit nunc. Etiam ultricies arcu sem, vel dapibus lacus lacinia quis. Nunc auctor placerat nisi ac ultrices."]},
+        {"icon":"fa-brands fa-creative-commons-share fa-2x",
+        "text":["Vestibulum imperdiet hendrerit nibh. Integer sit amet lacus et nunc auctor tincidunt eu ac sapien. Ut suscipit velit eget faucibus finibus.", ""]},
+        {"icon":"fa-solid fa-bookmark fa-2x",
+        "text":"Prasent eget enim vitae sapien egestas aliquet non quis neque. Duis pharetra varius massa, ut bibendum tortor sodales ac."}]
+}

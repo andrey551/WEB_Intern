@@ -124,7 +124,6 @@
     background-image: url("../img/diagoona-bg-2.jpg");
   
     min-height: 1000px;
-  
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -142,4 +141,13 @@
     justify-content: center;
     background-image: url("../img/diagoona-bg-3.jpg");
     height: 500px;
+  }
+
+  .disappear {
+    display: none;
+  }
+  .sound-control {
+    position:fixed;
+    bottom:50px;
+    left:20px;
   }

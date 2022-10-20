@@ -1,8 +1,8 @@
 var buttonList = document.getElementsByClassName("change-background");
-var backgroundList = ["./img/diagoona-bg-1.jpg",
-                    "./img/diagoona-bg-2.jpg",
-                    "./img/diagoona-bg-3.jpg", ]
-
+var backgroundList = ["./img/parallaxList/sunrise.jpg",
+                    "./img/parallaxList/sunset.jpg",
+                    "./img/parallaxList/night.jpg", ]
+var currentBackground;
 function changeBackground(i) {
     document.querySelector("body").style.backgroundImage = `url("${backgroundList[i]}")`
     Array.from(buttonList).forEach(element => {
@@ -10,17 +10,24 @@ function changeBackground(i) {
     });
     buttonList[i].style.background =  "aliceblue";
     iterator = i;
-    console.log(iterator)
 }
 
-changeBackground(0);
+backgroundLoop();
 
 var iterator = 1;
 
 function backgroundLoop() {
-    changeBackground(iterator);
+    var currentHour = new Date().getHours();
+    if(currentHour < 12) {
+        currentBackground = 0;
+    } else if(currentHour < 18 ) {
+        currentBackground = 1;
+    } else {
+        currentBackground = 2;
+    }
+    changeBackground(currentBackground);
     ++iterator;
     if(iterator > 2) iterator = 0;
 }
 
-setInterval(backgroundLoop, 5000);
+setInterval(backgroundLoop, 3600000);

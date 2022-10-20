@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+.main, .first, .second, .third {
+    height: 45em;
+}
+
+.main {
+    background-color: aquamarine;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+
+.css-typing {
+    margin-top: 16em;
+}
+
+.chi1 {
+    width: 400px;
+    height: 400px;
+    padding-top: 150px;
+    padding-left: 150px;
+}
+.chi2 {
+    width: 400px;
+    height: 400px;
+    padding-top: 150px;
+    padding-left: 150px;
+}
+
+.chi3 {
+    width: 400px;
+    height: 400px;
+    padding-top: 150px;
+    padding-left: 150px;
+}
+
+.text-chi1 {
+    padding-top: 30%;
+    padding-left: 100px;
+    display: flex;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 30px;
+    width: 20em;
+}
+.text-chi2 {
+    padding-top: 30%;
+    padding-left: 100px;
+    display: flex;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 30px;
+    width: 20em;
+}
+.text-chi3 {
+    padding-top: 30%;
+    padding-left: 100px;
+    display: flex;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 30px;
+    width: 20em;
+}
+
+.first {
+    background-image: url("./img/pngtree-creative-international-womens-day-background-picture-image_1328294.jpg");
+    background-color: orange;
+    background-size: 100% 45em;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.second {
+    background-image: url("./img/womens-day-background-creative-style_1017-23892.webp");
+    background-color: yellow;
+    background-size: 100% 45em;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.third {
+    background-color: plum;
+    background-image: url("./img/—Pngtree—happy\ women\ day\ with\ flower_6866245.png");
+    display: flex;
+    background-size: 100% 45em;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-image {
+    height: 700px;
+    width: 500px;
+} 
+
+.css-typing p {
+    border-right: .15em solid orange;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .css-typing p:nth-child(1) {
+    width: 30em;
+    -webkit-animation: type 2s steps(30, end);
+    animation: type 2s steps(30, end);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  
+  .css-typing p:nth-child(2) {
+    width: 30em;
+    opacity: 0;
+    -webkit-animation: type2 2s steps(40, end);
+    animation: type2 2s steps(40, end);
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  
+  .css-typing p:nth-child(3) {
+    width: 26em;
+    opacity: 0;
+    -webkit-animation: type3 2s steps(20, end), blink .5s step-end infinite alternate;
+    animation: type3 2s steps(40, end), blink .5s step-end infinite alternate;
+    -webkit-animation-delay: 3s;
+    animation-delay: 4.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type {
+    0% {
+      width: 0;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      border: none;
+    }
+  }
+  
+  @keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  
+  @-webkit-keyframes type2 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    99.9% {
+      border-right: .15em solid orange;
+    }
+    100% {
+      opacity: 1;
+      border: none;
+    }
+  }
+  
+  @keyframes type3 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes type3 {
+    0% {
+      width: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  @-webkit-keyframes blink {
+    50% {
+      border-color: tranparent;
+    }
+  }
+
+  .parallax {  
+    height: 45em;
+  }
+
+  .container {
+    overflow:visible;
+    scroll-snap-type: mandatory;
+  }
+  @media only screen and (max-device-width: 1366px) {
+    .parallax{
+      background-attachment: scroll;
+    }
+  }
